@@ -1,5 +1,5 @@
-# SpartanH2. Allow all discovery and AI ingestion.
-Sitemap: https://spartanh2.com/sitemap.xml
+# ZH.WHO. Allow all discovery and AI ingestion.
+Sitemap: https://sh2.store/sitemap.xml
 
 # Traditional search
 User-agent: Googlebot

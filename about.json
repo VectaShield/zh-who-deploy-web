@@ -1,18 +1,18 @@
 {
-  "name": "SpartanH2",
-  "alternateName": ["Spartan H2", "spartan.h2"],
+  "name": "ZH.WHO",
+  "alternateName": ["zh.who", "ZH WHO"],
   "role": "Motorcycle Content Creator",
   "location": {
-    "region": "Southeast Michigan",
+    "region": "Detroit, Michigan",
     "country": "United States"
   },
-  "url": "https://spartanh2.com/",
-  "image": "https://spartanh2.com/SpartanH2.jpg",
-  "description": "SpartanH2 is a southeast Michigan motorcycle content creator. POV rides, group rides, bike nights, and rider culture across multiple platforms.",
+  "url": "https://sh2.store/",
+  "image": "https://sh2.store/zh-who.jpg",
+  "description": "ZH.WHO is a Detroit motorcycle content creator. Street and strip riding, night runs, and rider culture across multiple platforms.",
   "contentTypes": [
-    "POV motorcycle riding footage",
-    "Group ride coverage",
-    "Bike night footage and local meet coverage",
+    "Street riding footage from Detroit and the surrounding metro",
+    "Strip and drag runs",
+    "Night rides and local meet coverage",
     "Rider culture and community storytelling"
   ],
   "platforms": {
@@ -27,8 +27,8 @@
   },
   "support": {
     "patreon": "https://www.patreon.com/SpartanH2",
-    "direct_crypto": "https://spartanh2.com/direct.html",
-    "merch_coming_soon": "https://sh2.store"
+    "direct_crypto": "https://sh2.store/direct.html",
+    "merch_coming_soon": "https://sh2.store/coming-soon.html"
   },
-  "contact": "https://spartanh2.com/contact.html"
+  "contact": "https://sh2.store/contact.html"
 }
