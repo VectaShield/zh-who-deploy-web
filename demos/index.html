@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ZH.WHO — live background options</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="stylesheet" href="/styles.css">
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@600;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  body { display: block; padding: 40px 20px 60px; }
+  .g-wrap { max-width: 1100px; margin: 0 auto; }
+  h1 { font-family: 'Chakra Petch', sans-serif; font-size: 2rem; letter-spacing: 0.12em; text-transform: uppercase;
+       color: #eceaf2; text-shadow: -2px 0 0 rgba(255,37,69,.5), 2px 0 0 rgba(169,107,255,.4); }
+  .sub { color: #8d88a3; margin: 10px 0 30px; font-size: 0.9rem; letter-spacing: 0.06em; }
+  .g-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 14px; }
+  .g-card { display: flex; flex-direction: column; gap: 6px; padding: 18px;
+    background: linear-gradient(140deg, rgba(255,37,69,.45), rgba(169,107,255,.2));
+    clip-path: polygon(10px 0,100% 0,100% calc(100% - 10px),calc(100% - 10px) 100%,0 100%,0 10px);
+    text-decoration: none; position: relative; transition: transform .15s ease; }
+  .g-card::before { content:''; position:absolute; inset:1px; background: linear-gradient(180deg,#12121b,#0b0b12);
+    clip-path: polygon(10px 0,100% 0,100% calc(100% - 10px),calc(100% - 10px) 100%,0 100%,0 10px); z-index:0; }
+  .g-card > * { position: relative; z-index: 1; }
+  .g-card:hover { transform: translateY(-3px); }
+  .g-name { font-family:'Chakra Petch',sans-serif; font-weight:700; color:#eceaf2; text-transform:uppercase; letter-spacing:.1em; }
+  .g-tech { font-size:.68rem; color:#ff2545; letter-spacing:.16em; text-transform:uppercase; }
+  .g-blurb { font-size:.82rem; color:#8d88a3; line-height:1.5; }
+</style></head>
+<body><div class="g-wrap">
+<h1>Live background options</h1>
+<p class="sub">13 candidates, each applied to the real home page. Pick one and it gets ported into the site. <a href="/" style="color:#a96bff">&larr; back to the live site</a></p>
+<div class="g-grid">
+  <a class="g-card" href="rain.html">
+    <span class="g-name">Neon Rain</span>
+    <span class="g-tech">Canvas 2D</span>
+    <span class="g-blurb">Blade Runner downpour. Crimson/violet streaks with motion trails.</span>
+  </a>
+  <a class="g-card" href="fog.html">
+    <span class="g-name">Volumetric Fog</span>
+    <span class="g-tech">CSS + baked noise</span>
+    <span class="g-blurb">Layered haze drifting at different speeds. Pure compositor, no per-frame blur.</span>
+  </a>
+  <a class="g-card" href="grid.html">
+    <span class="g-name">Synthwave Grid</span>
+    <span class="g-tech">CSS only</span>
+    <span class="g-blurb">Perspective floor racing to a neon horizon. Zero JS.</span>
+  </a>
+  <a class="g-card" href="streaks.html">
+    <span class="g-name">Neon Streaks</span>
+    <span class="g-tech">CSS only</span>
+    <span class="g-blurb">Light trails sweeping past, like traffic at night. Zero JS.</span>
+  </a>
+  <a class="g-card" href="matrix.html">
+    <span class="g-name">Digital Rain</span>
+    <span class="g-tech">Canvas 2D</span>
+    <span class="g-blurb">Falling glyph columns. Matrix, but crimson instead of green.</span>
+  </a>
+  <a class="g-card" href="warp.html">
+    <span class="g-name">Hyperspace</span>
+    <span class="g-tech">Canvas 2D</span>
+    <span class="g-blurb">Speed lines tearing past a vanishing point. Pure velocity.</span>
+  </a>
+  <a class="g-card" href="circuit.html">
+    <span class="g-name">Circuit Pulse</span>
+    <span class="g-tech">Canvas 2D</span>
+    <span class="g-blurb">Data pulses running along PCB traces. Machine, not weather.</span>
+  </a>
+  <a class="g-card" href="crt.html">
+    <span class="g-name">CRT Glitch</span>
+    <span class="g-tech">CSS + tiny JS</span>
+    <span class="g-blurb">Dying monitor. Scanline roll with rare RGB tear pulses.</span>
+  </a>
+  <a class="g-card" href="smoke.html">
+    <span class="g-name">Smoke (video)</span>
+    <span class="g-tech">Looping video</span>
+    <span class="g-blurb">Real volumetric smoke footage, crimson-tinted. Heaviest option: 14 MB.</span>
+  </a>
+  <a class="g-card" href="headlights.html">
+    <span class="g-name">Traffic Bokeh</span>
+    <span class="g-tech">Canvas 2D</span>
+    <span class="g-blurb">Out-of-focus headlights drifting past. Night city, shot wide open.</span>
+  </a>
+  <a class="g-card" href="embers.html">
+    <span class="g-name">Embers</span>
+    <span class="g-tech">Canvas 2D</span>
+    <span class="g-blurb">Sparks rising off hot pipes. The most motorcycle option here.</span>
+  </a>
+  <a class="g-card" href="shader.html">
+    <span class="g-name">Shader Fog</span>
+    <span class="g-tech">Raw WebGL</span>
+    <span class="g-blurb">True procedural fbm fog on the GPU. No library, half-res, ~4 KB.</span>
+  </a>
+  <a class="g-card" href="visor.html">
+    <span class="g-name">Rain on Visor</span>
+    <span class="g-tech">Canvas 2D</span>
+    <span class="g-blurb">Droplets beading and running down the helmet visor.</span>
+  </a></div>
+</div></body></html>

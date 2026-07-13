@@ -6,13 +6,12 @@
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Expires" content="0">
-    <title>ZH.WHO | Motorcycle Content Creator | Detroit</title>
+    <title>Rain on Visor — BG demo</title>
     <meta name="description" content="ZH.WHO is a Detroit motorcycle content creator. Street and strip riding, night runs, and rider culture. Central hub for every platform, support, and partners.">
     <meta name="author" content="ZH.WHO">
-    <meta name="robots" content="index, follow">
+    <meta name="robots" content="noindex, nofollow">
     <meta name="theme-color" content="#06060a">
-    <link rel="canonical" href="https://sh2.store/">
-
+    
     <!-- Open Graph. Renders the preview card when the site is linked on
          Discord, Facebook, LinkedIn, Slack, and iMessage. -->
     <meta property="og:title" content="ZH.WHO | Motorcycle Content Creator | Detroit">
@@ -37,8 +36,8 @@
     <meta name="twitter:image" content="https://sh2.store/zh-who.jpg">
     <meta name="twitter:image:alt" content="ZH.WHO, motorcycle content creator">
 
-    <link rel="stylesheet" href="styles.css?v=20260713124840">
-    <link rel="icon" type="image/jpeg" href="zh-who.jpg?v=20260713124840">
+    <link rel="stylesheet" href="/styles.css?v=20260713124840">
+    <link rel="icon" type="image/jpeg" href="/zh-who.jpg?v=20260713124840">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@600;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
@@ -97,11 +96,45 @@
       ]
     }
     </script>
+<style>
+
+.demo-bar {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 99;
+  display: flex; flex-wrap: wrap; align-items: center; gap: 4px;
+  padding: 6px 10px;
+  background: rgba(4,4,8,0.92);
+  border-bottom: 1px solid rgba(255,37,69,0.35);
+  font-family: 'Chakra Petch', sans-serif; font-size: 11px;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  backdrop-filter: none;
+}
+.demo-bar a { color: #8d88a3; text-decoration: none; padding: 4px 8px; border: 1px solid transparent; }
+.demo-bar a:hover { color: #eceaf2; border-color: rgba(169,107,255,0.5); }
+.demo-bar a.on { color: #ff2545; border-color: #ff2545; }
+.demo-tag { color: #06060a; background: #ff2545; padding: 4px 8px; font-weight: 700; margin-right: 6px; }
+.demo-home { margin-left: auto; color: #a96bff !important; }
+body { padding-top: 64px !important; }
+/* Background FX layer. NOT z-index:-1 — in the root stacking context, body's
+   own (opaque) gradient background paints AFTER negative-z-index children, so
+   -1 hides the effects entirely. z-index:0 sits above the body gradient and
+   below .card (z-index:1), so text stays on top. */
+#bgfx { position: fixed; inset: 0; z-index: 0; overflow: hidden; pointer-events: none; }
+#bgfx canvas { width: 100%; height: 100%; display: block; }
+
+#bgc { opacity: 0.9; }
+</style>
 </head>
 <body>
+
+<nav class="demo-bar">
+  <span class="demo-tag">BG DEMO</span>
+  <a href="rain.html" class="">Neon Rain</a><a href="fog.html" class="">Volumetric Fog</a><a href="grid.html" class="">Synthwave Grid</a><a href="streaks.html" class="">Neon Streaks</a><a href="matrix.html" class="">Digital Rain</a><a href="warp.html" class="">Hyperspace</a><a href="circuit.html" class="">Circuit Pulse</a><a href="crt.html" class="">CRT Glitch</a><a href="smoke.html" class="">Smoke (video)</a><a href="headlights.html" class="">Traffic Bokeh</a><a href="embers.html" class="">Embers</a><a href="shader.html" class="">Shader Fog</a><a href="visor.html" class="on">Rain on Visor</a>
+  <a href="index.html" class="demo-home">All ▦</a>
+</nav>
+<div id="bgfx"><canvas id="bgc"></canvas></div>
     <main class="card">
         <div class="avatar-wrap">
-            <img src="zh-who.jpg?v=20260713124840" alt="ZH.WHO, motorcycle content creator based in Detroit" class="avatar" width="220" height="220" fetchpriority="high">
+            <img src="/zh-who.jpg?v=20260713124840" alt="ZH.WHO, motorcycle content creator based in Detroit" class="avatar" width="220" height="220" fetchpriority="high">
         </div>
 
         <h1 class="name">ZH<span class="accent">.WHO</span></h1>
@@ -111,59 +144,59 @@
             <h2 class="section-title">Support</h2>
             <div class="link-grid" style="grid-template-columns: 1fr;">
                 <a class="link-btn support" href="coming-soon.html" rel="noopener" aria-label="Merch coming soon" title="Merch (Coming Soon)">
-                    <span class="icon"><svg class="icon-svg" aria-hidden="true"><use href="icons.svg#i-cart"/></svg></span><span class="label">Merch Coming Soon</span>
+                    <span class="icon"><svg class="icon-svg" aria-hidden="true"><use href="/icons.svg#i-cart"/></svg></span><span class="label">Merch Coming Soon</span>
                 </a>
             </div>
             <div class="link-grid" style="grid-template-columns: 1fr 1fr;">
                 <a class="link-btn support" href="https://www.patreon.com/SpartanH2" target="_blank" rel="noopener" aria-label="Patreon page" title="Patreon">
-                    <span class="icon"><svg class="icon-svg" aria-hidden="true"><use href="icons.svg#i-patreon"/></svg></span><span class="label">Patreon</span>
+                    <span class="icon"><svg class="icon-svg" aria-hidden="true"><use href="/icons.svg#i-patreon"/></svg></span><span class="label">Patreon</span>
                 </a>
                 <a class="link-btn support" href="direct.html" rel="noopener" aria-label="Direct crypto support" title="Direct">
-                    <span class="icon"><svg class="icon-svg" aria-hidden="true"><use href="icons.svg#i-bitcoin"/></svg></span><span class="label">Direct</span>
+                    <span class="icon"><svg class="icon-svg" aria-hidden="true"><use href="/icons.svg#i-bitcoin"/></svg></span><span class="label">Direct</span>
                 </a>
             </div>
 
             <h2 class="section-title">Watch</h2>
             <div class="link-grid">
                 <a class="link-btn" href="https://www.youtube.com/@SpartanH2" target="_blank" rel="noopener" aria-label="YouTube channel" title="YouTube">
-                    <span class="icon"><svg class="icon-svg" aria-hidden="true"><use href="icons.svg#i-youtube"/></svg></span><span class="label">YouTube</span>
+                    <span class="icon"><svg class="icon-svg" aria-hidden="true"><use href="/icons.svg#i-youtube"/></svg></span><span class="label">YouTube</span>
                 </a>
                 <a class="link-btn" href="https://www.instagram.com/SpartanH2/" target="_blank" rel="noopener" aria-label="Instagram profile" title="Instagram">
-                    <span class="icon"><svg class="icon-svg" aria-hidden="true"><use href="icons.svg#i-instagram"/></svg></span><span class="label">Instagram</span>
+                    <span class="icon"><svg class="icon-svg" aria-hidden="true"><use href="/icons.svg#i-instagram"/></svg></span><span class="label">Instagram</span>
                 </a>
                 <a class="link-btn" href="https://www.tiktok.com/@spartan.h2" target="_blank" rel="noopener" aria-label="TikTok profile" title="TikTok">
-                    <span class="icon"><svg class="icon-svg" aria-hidden="true"><use href="icons.svg#i-tiktok"/></svg></span><span class="label">TikTok</span>
+                    <span class="icon"><svg class="icon-svg" aria-hidden="true"><use href="/icons.svg#i-tiktok"/></svg></span><span class="label">TikTok</span>
                 </a>
                 <a class="link-btn" href="https://rumble.com/user/SpartanH2" target="_blank" rel="noopener" aria-label="Rumble channel" title="Rumble">
-                    <span class="icon"><svg class="icon-svg" aria-hidden="true"><use href="icons.svg#i-rumble"/></svg></span><span class="label">Rumble</span>
+                    <span class="icon"><svg class="icon-svg" aria-hidden="true"><use href="/icons.svg#i-rumble"/></svg></span><span class="label">Rumble</span>
                 </a>
             </div>
 
             <h2 class="section-title">Connect</h2>
             <div class="link-grid">
                 <a class="link-btn" href="https://discord.gg/fz67hjDnPW" target="_blank" rel="noopener" aria-label="Discord server invite" title="Discord">
-                    <span class="icon"><svg class="icon-svg" aria-hidden="true"><use href="icons.svg#i-discord"/></svg></span><span class="label">Discord</span>
+                    <span class="icon"><svg class="icon-svg" aria-hidden="true"><use href="/icons.svg#i-discord"/></svg></span><span class="label">Discord</span>
                 </a>
                 <a class="link-btn" href="https://x.com/Spartan_H2" target="_blank" rel="noopener" aria-label="X profile" title="X / Twitter">
-                    <span class="icon"><svg class="icon-svg" aria-hidden="true"><use href="icons.svg#i-x"/></svg></span><span class="label">X / Twitter</span>
+                    <span class="icon"><svg class="icon-svg" aria-hidden="true"><use href="/icons.svg#i-x"/></svg></span><span class="label">X / Twitter</span>
                 </a>
                 <a class="link-btn" href="https://www.snapchat.com/add/Spartan_H2" target="_blank" rel="noopener" aria-label="Snapchat" title="Snapchat">
-                    <span class="icon"><svg class="icon-svg" aria-hidden="true"><use href="icons.svg#i-snapchat"/></svg></span><span class="label">Snapchat</span>
+                    <span class="icon"><svg class="icon-svg" aria-hidden="true"><use href="/icons.svg#i-snapchat"/></svg></span><span class="label">Snapchat</span>
                 </a>
                 <a class="link-btn" href="https://www.facebook.com/profile.php?id=61591693924495" target="_blank" rel="noopener" aria-label="Facebook profile" title="Facebook">
-                    <span class="icon"><svg class="icon-svg" aria-hidden="true"><use href="icons.svg#i-facebook"/></svg></span><span class="label">Facebook</span>
+                    <span class="icon"><svg class="icon-svg" aria-hidden="true"><use href="/icons.svg#i-facebook"/></svg></span><span class="label">Facebook</span>
                 </a>
             </div>
 
             <div class="meta-cta-row">
                 <a class="business-cta" href="supporters.html" aria-label="Supporters page">
-                    <svg class="icon-svg" aria-hidden="true"><use href="icons.svg#i-star"/></svg><span class="label">Supporters</span>
+                    <svg class="icon-svg" aria-hidden="true"><use href="/icons.svg#i-star"/></svg><span class="label">Supporters</span>
                 </a>
                 <a class="business-cta" href="partners.html" aria-label="Partners page">
-                    <svg class="icon-svg" aria-hidden="true"><use href="icons.svg#i-shield"/></svg><span class="label">Partners</span>
+                    <svg class="icon-svg" aria-hidden="true"><use href="/icons.svg#i-shield"/></svg><span class="label">Partners</span>
                 </a>
                 <a class="business-cta" href="contact.html" aria-label="Business contact for ZH.WHO">
-                    <svg class="icon-svg" aria-hidden="true"><use href="icons.svg#i-envelope"/></svg><span class="label">Business Contact</span>
+                    <svg class="icon-svg" aria-hidden="true"><use href="/icons.svg#i-envelope"/></svg><span class="label">Business Contact</span>
                 </a>
             </div>
         </section>
@@ -183,5 +216,73 @@
     </main>
 
     <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+<script>
+(function(){
+
+const cv = document.getElementById('bgc');
+const ctx = cv.getContext('2d', { alpha: true });
+let w = 0, h = 0, dpr = 1;
+function resize() {
+  dpr = Math.min(window.devicePixelRatio || 1, 1.5);
+  w = cv.clientWidth; h = cv.clientHeight;
+  cv.width = Math.floor(w * dpr); cv.height = Math.floor(h * dpr);
+  ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+  if (typeof onResize === 'function') onResize();
+}
+
+let drops = [], trails = [];
+function mk() {
+  return { x: Math.random() * w, y: -20, r: 1.5 + Math.random() * 5,
+           sp: 0, stuck: Math.random() < 0.35, wob: Math.random() * 6 };
+}
+function onResize() { drops = Array.from({ length: 90 }, () => Object.assign(mk(), { y: Math.random() * h })); }
+function draw(t) {
+  ctx.globalCompositeOperation = 'source-over';
+  ctx.fillStyle = 'rgba(6,6,10,0.09)';   // slow fade leaves wet streaks behind
+  ctx.fillRect(0, 0, w, h);
+  for (let i = 0; i < drops.length; i++) {
+    const d = drops[i];
+    // Big drops overcome surface tension and run; small ones cling and jitter.
+    if (d.stuck && d.r < 4.2) {
+      d.r += 0.004;
+      if (Math.random() < 0.004) d.stuck = false;
+    } else {
+      d.sp += 0.02 * (d.r / 3);
+      d.y += Math.min(d.sp, 5);
+      d.x += Math.sin(t * 2 + d.wob) * 0.25;
+    }
+    const g = ctx.createLinearGradient(d.x - d.r, d.y - d.r, d.x + d.r, d.y + d.r);
+    g.addColorStop(0, 'rgba(255,37,69,0.30)');
+    g.addColorStop(0.5, 'rgba(220,210,240,0.22)');
+    g.addColorStop(1, 'rgba(169,107,255,0.30)');
+    ctx.fillStyle = g;
+    ctx.beginPath(); ctx.ellipse(d.x, d.y, d.r * 0.8, d.r, 0, 0, 7); ctx.fill();
+    ctx.fillStyle = 'rgba(255,255,255,0.35)';   // specular pin-light
+    ctx.beginPath(); ctx.arc(d.x - d.r * 0.28, d.y - d.r * 0.35, d.r * 0.22, 0, 7); ctx.fill();
+    if (d.y - d.r > h) drops[i] = mk();
+  }
+}
+const reduce = matchMedia('(prefers-reduced-motion: reduce)');
+let raf = 0, last = 0, running = false;
+const FRAME = 1000 / 30; // 30fps cap
+function loop(t) {
+  raf = requestAnimationFrame(loop);
+  if (t - last < FRAME) return;
+  last = t;
+  draw(t / 1000);
+}
+const FORCE = location.search.indexOf('force') !== -1; // testing only: automated tabs report hidden
+function sync() {
+  const should = (FORCE || !document.hidden) && !reduce.matches;
+  if (should && !running) { running = true; last = 0; raf = requestAnimationFrame(loop); }
+  else if (!should && running) { running = false; cancelAnimationFrame(raf); }
+}
+window.addEventListener('resize', resize);
+document.addEventListener('visibilitychange', sync);
+reduce.addEventListener('change', sync);
+resize(); sync();
+
+})();
+</script>
 </body>
 </html>
