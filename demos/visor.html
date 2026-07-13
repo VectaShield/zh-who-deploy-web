@@ -36,8 +36,8 @@
     <meta name="twitter:image" content="https://sh2.store/zh-who.jpg">
     <meta name="twitter:image:alt" content="ZH.WHO, motorcycle content creator">
 
-    <link rel="stylesheet" href="/styles.css?v=20260713124840">
-    <link rel="icon" type="image/jpeg" href="/zh-who.jpg?v=20260713124840">
+    <link rel="stylesheet" href="/styles.css?v=20260713130330">
+    <link rel="icon" type="image/jpeg" href="/zh-who.jpg?v=20260713130330">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@600;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
@@ -99,21 +99,38 @@
 <style>
 
 .demo-bar {
-  position: fixed; top: 0; left: 0; right: 0; z-index: 99;
-  display: flex; flex-wrap: wrap; align-items: center; gap: 4px;
-  padding: 6px 10px;
-  background: rgba(4,4,8,0.92);
-  border-bottom: 1px solid rgba(255,37,69,0.35);
+  position: fixed; top: 8px; left: 8px; z-index: 99;
+  max-width: calc(100vw - 16px);
+  background: rgba(4,4,8,0.94);
+  border: 1px solid rgba(255,37,69,0.45);
   font-family: 'Chakra Petch', sans-serif; font-size: 11px;
   letter-spacing: 0.12em; text-transform: uppercase;
-  backdrop-filter: none;
 }
-.demo-bar a { color: #8d88a3; text-decoration: none; padding: 4px 8px; border: 1px solid transparent; }
+.demo-bar summary {
+  display: flex; align-items: center; gap: 8px;
+  padding: 7px 10px; cursor: pointer; list-style: none;
+  color: #eceaf2; white-space: nowrap;
+}
+.demo-bar summary::-webkit-details-marker { display: none; }
+.demo-current { color: #ff2545; }
+.demo-caret { color: #8d88a3; transition: transform .15s ease; }
+.demo-bar[open] .demo-caret { transform: rotate(180deg); }
+.demo-links {
+  display: flex; flex-wrap: wrap; gap: 4px;
+  padding: 8px 10px 10px;
+  border-top: 1px solid rgba(255,37,69,0.25);
+  max-height: 55vh; overflow-y: auto;
+}
+.demo-bar a { color: #8d88a3; text-decoration: none; padding: 5px 8px; border: 1px solid transparent; }
 .demo-bar a:hover { color: #eceaf2; border-color: rgba(169,107,255,0.5); }
 .demo-bar a.on { color: #ff2545; border-color: #ff2545; }
-.demo-tag { color: #06060a; background: #ff2545; padding: 4px 8px; font-weight: 700; margin-right: 6px; }
-.demo-home { margin-left: auto; color: #a96bff !important; }
-body { padding-top: 64px !important; }
+.demo-tag { color: #06060a; background: #ff2545; padding: 3px 7px; font-weight: 700; }
+.demo-home { color: #a96bff !important; }
+/* No body padding: the pill floats over the page instead of pushing it down,
+   so each demo is framed exactly like the real home page. */
+@media (min-width: 900px) {
+  .demo-bar { max-width: min(880px, calc(100vw - 16px)); }
+}
 /* Background FX layer. NOT z-index:-1 — in the root stacking context, body's
    own (opaque) gradient background paints AFTER negative-z-index children, so
    -1 hides the effects entirely. z-index:0 sits above the body gradient and
@@ -126,15 +143,21 @@ body { padding-top: 64px !important; }
 </head>
 <body>
 
-<nav class="demo-bar">
-  <span class="demo-tag">BG DEMO</span>
-  <a href="rain.html" class="">Neon Rain</a><a href="fog.html" class="">Volumetric Fog</a><a href="grid.html" class="">Synthwave Grid</a><a href="streaks.html" class="">Neon Streaks</a><a href="matrix.html" class="">Digital Rain</a><a href="warp.html" class="">Hyperspace</a><a href="circuit.html" class="">Circuit Pulse</a><a href="crt.html" class="">CRT Glitch</a><a href="smoke.html" class="">Smoke (video)</a><a href="headlights.html" class="">Traffic Bokeh</a><a href="embers.html" class="">Embers</a><a href="shader.html" class="">Shader Fog</a><a href="visor.html" class="on">Rain on Visor</a>
-  <a href="index.html" class="demo-home">All ▦</a>
-</nav>
+<details class="demo-bar" id="demo-nav">
+  <summary>
+    <span class="demo-tag">BG</span>
+    <span class="demo-current">Rain on Visor</span>
+    <span class="demo-caret">▾</span>
+  </summary>
+  <div class="demo-links">
+    <a href="rain.html" class="">Neon Rain</a><a href="fog.html" class="">Volumetric Fog</a><a href="grid.html" class="">Synthwave Grid</a><a href="streaks.html" class="">Neon Streaks</a><a href="matrix.html" class="">Digital Rain</a><a href="warp.html" class="">Hyperspace</a><a href="circuit.html" class="">Circuit Pulse</a><a href="crt.html" class="">CRT Glitch</a><a href="smoke.html" class="">Smoke (video)</a><a href="headlights.html" class="">Traffic Bokeh</a><a href="embers.html" class="">Embers</a><a href="shader.html" class="">Shader Fog</a><a href="visor.html" class="on">Rain on Visor</a>
+    <a href="index.html" class="demo-home">All ▦</a>
+  </div>
+</details>
 <div id="bgfx"><canvas id="bgc"></canvas></div>
     <main class="card">
         <div class="avatar-wrap">
-            <img src="/zh-who.jpg?v=20260713124840" alt="ZH.WHO, motorcycle content creator based in Detroit" class="avatar" width="220" height="220" fetchpriority="high">
+            <img src="/zh-who.jpg?v=20260713130330" alt="ZH.WHO, motorcycle content creator based in Detroit" class="avatar" width="220" height="220" fetchpriority="high">
         </div>
 
         <h1 class="name">ZH<span class="accent">.WHO</span></h1>
