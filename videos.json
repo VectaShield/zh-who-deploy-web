@@ -1,0 +1,75 @@
+{
+  "_howto": [
+    "HOW TO ADD A VIDEO: copy the TikTok video URL and add an object to the",
+    "'videos' array below: {\"url\": \"<paste>\", \"date\": \"YYYY-MM-DD\",",
+    "\"views\": 88800, \"note\": \"one line about it\"}.",
+    "'views' is a plain number — the site formats it (88800 -> 88.8K) and",
+    "automatically pins the three highest-viewed videos to the top of the",
+    "feed. There is no 'pinned' flag to maintain; update the numbers when",
+    "you feel like it and the pins follow.",
+    "The upload date is encoded in the video ID if you are unsure:",
+    "new Date(Number(BigInt(id) >> 32n) * 1000).",
+    "THUMBNAIL (required): grab thumbnail_url from",
+    "https://www.tiktok.com/oembed?url=<video-url> and save a ~360px wide",
+    "webp at thumbs/<video-id>.webp — TikTok's CDN URLs expire, so a local",
+    "copy is mandatory. A missing thumb degrades to a styled dark card.",
+    "Push to main; the site deploys automatically in ~40 seconds."
+  ],
+  "_auto": "Auto-refreshed every 6 hours by scripts/refresh-videos.mjs. Hand-edited \"note\" text is preserved by video id; \"views\" is re-pulled from TikTok. Editing this file by hand still works.",
+  "videos": [
+    {
+      "url": "https://www.tiktok.com/@zh.who/video/7668049880547380511",
+      "date": "2026-07-29",
+      "views": 4053,
+      "note": "We set out to be the first bikes across the Gordie Howe Bridg…"
+    },
+    {
+      "url": "https://www.tiktok.com/@zh.who/video/7667202527334567199",
+      "date": "2026-07-27",
+      "views": 606,
+      "note": "Are we being followed??? PART 2 wild night in Detroit Camera…"
+    },
+    {
+      "url": "https://www.tiktok.com/@zh.who/video/7663921265702423839",
+      "date": "2026-07-18",
+      "views": 2221,
+      "note": "Just another Saturday night in Detroit 🔥 with H2 Has any one…"
+    },
+    {
+      "url": "https://www.tiktok.com/@zh.who/video/7660978836166774047",
+      "date": "2026-07-10",
+      "views": 235,
+      "note": "Big Things in store for the ZH2 👀 Extreme Creation intercool…"
+    },
+    {
+      "url": "https://www.tiktok.com/@zh.who/video/7658398334184394015",
+      "date": "2026-07-03",
+      "views": 999,
+      "note": "Fun police out in force at the train station meet."
+    },
+    {
+      "url": "https://www.tiktok.com/@zh.who/video/7653891716562390302",
+      "date": "2026-06-21",
+      "views": 776,
+      "note": "First time ever at the drag strip 👀👀 Z900 VS ZH2"
+    },
+    {
+      "url": "https://www.tiktok.com/@zh.who/video/7636132336362409246",
+      "date": "2026-05-04",
+      "views": 825,
+      "note": "Poor homie 😓😓 Some more clips from Detroit"
+    },
+    {
+      "url": "https://www.tiktok.com/@zh.who/video/7633923121765993758",
+      "date": "2026-04-28",
+      "views": 763,
+      "note": "People were rocking with the supercharged 🏍 Detroit"
+    },
+    {
+      "url": "https://www.tiktok.com/@zh.who/video/7578642777282563358",
+      "date": "2025-11-30",
+      "views": 527,
+      "note": "RAM 2500 VS Drone 😓"
+    }
+  ]
+}
