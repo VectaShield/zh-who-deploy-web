@@ -1,17 +1,24 @@
-# Cache control — force fresh HTML/CSS/JS, allow short cache for images.
-# All rules wrapped in IfModule so a missing Apache module can't 500 the site.
-
+# Cache policy. All rules wrapped in IfModule so a missing Apache/LiteSpeed
+# module can not 500 the site.
+#
+# HTML is no-cache (NOT no-store: no-store kills the browser back/forward
+# cache and makes back navigation feel like a full reload).
+# CSS/JS/fonts are immutable for a year - safe because every build stamps
+# ?v=<timestamp> onto css/js URLs, and font filenames never change without
+# a rename.
+# Images and JSON get a day plus stale-while-revalidate, which kills the
+# per-image 304 round-trip on every navigation.
 <IfModule mod_headers.c>
-    # HTML: never cache, always revalidate
     <FilesMatch "\.(html|htm)$">
-        Header set Cache-Control "no-store, no-cache, must-revalidate, max-age=0"
-        Header set Pragma "no-cache"
-        Header set Expires "0"
+        Header set Cache-Control "no-cache, must-revalidate, max-age=0"
     </FilesMatch>
 
-    # CSS / JS: revalidate every request (304 if unchanged — cheap)
     <FilesMatch "\.(css|js)$">
-        Header set Cache-Control "no-cache, must-revalidate"
+        Header set Cache-Control "public, max-age=31536000, immutable"
+    </FilesMatch>
+
+    <FilesMatch "\.(woff2|woff)$">
+        Header set Cache-Control "public, max-age=31536000, immutable"
     </FilesMatch>
 
     # Text config files (robots, sitemap, llms): revalidate every request
@@ -19,28 +26,17 @@
         Header set Cache-Control "no-cache, must-revalidate"
     </FilesMatch>
 
-    # Images: revalidate every request (browser caches locally but asks
-    # server; server returns 304 if unchanged, fresh if changed).
-    # Was max-age=86400 but that caused updated images to be invisible
-    # for up to 24 hours after a swap.
-    <FilesMatch "\.(jpg|jpeg|png|gif|webp|svg|ico)$">
-        Header set Cache-Control "no-cache, must-revalidate"
+    <FilesMatch "\.(jpg|jpeg|png|gif|webp|svg|ico|json)$">
+        Header set Cache-Control "public, max-age=86400, stale-while-revalidate=604800"
     </FilesMatch>
 </IfModule>
 
 <IfModule mod_expires.c>
     ExpiresActive On
     ExpiresByType text/html "access plus 0 seconds"
-    ExpiresByType text/css "access plus 0 seconds"
-    ExpiresByType application/javascript "access plus 0 seconds"
-    ExpiresByType image/jpeg "access plus 0 seconds"
-    ExpiresByType image/png "access plus 0 seconds"
-    ExpiresByType image/webp "access plus 0 seconds"
-    ExpiresByType image/svg+xml "access plus 0 seconds"
 </IfModule>
 
-# Security and privacy headers. All optional but standard for a
-# public site. Guarded so a missing mod_headers cannot 500 us.
+# Security and privacy headers. Guarded so a missing mod_headers cannot 500 us.
 <IfModule mod_headers.c>
     # HTTPS enforcement signal for compliant browsers
     Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains" env=HTTPS
@@ -54,15 +50,38 @@
     Header set X-XSS-Protection "0"
 </IfModule>
 
-# Gzip compression for text based responses. Big Core Web Vitals win
-# for HTML and CSS. Images already ship compressed, do not double compress.
+# Gzip compression for text based responses. Images already ship compressed,
+# do not double compress.
 <IfModule mod_deflate.c>
-    AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css text/javascript application/javascript application/json application/xml application/rss+xml application/atom+xml image/svg+xml
+    AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css text/javascript application/javascript application/x-javascript application/json application/xml application/rss+xml application/atom+xml image/svg+xml
 </IfModule>
 
 # Brotli where available, preferred over gzip when both are supported
 <IfModule mod_brotli.c>
-    AddOutputFilterByType BROTLI_COMPRESS text/html text/plain text/xml text/css text/javascript application/javascript application/json application/xml application/rss+xml application/atom+xml image/svg+xml
+    AddOutputFilterByType BROTLI_COMPRESS text/html text/plain text/xml text/css text/javascript application/javascript application/x-javascript application/json application/xml application/rss+xml application/atom+xml image/svg+xml
+</IfModule>
+
+# ─────────────────────────────────────────────────────────────
+# Vanity redirect: zhwho.com/discord -> the shared Legion server.
+# 302 (not 301) so the target invite can be rotated later without
+# browsers hard-caching the old one.
+# ─────────────────────────────────────────────────────────────
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteRule ^discord/?$ https://discord.gg/fz67hjDnPW [R=302,L]
+</IfModule>
+
+# ─────────────────────────────────────────────────────────────
+# Clean extensionless URLs: /contact serves contact.html without a
+# redirect (address bar keeps the clean form). Unknown paths still
+# fall through to the real 404.
+# ─────────────────────────────────────────────────────────────
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{DOCUMENT_ROOT}/$1.html -f
+    RewriteRule ^([^.]+?)/?$ /$1.html [L]
 </IfModule>
 
 # ─────────────────────────────────────────────────────────────
@@ -81,9 +100,7 @@ ErrorDocument 503 /maintenance.html
 # <IfModule mod_rewrite.c>
 #     RewriteEngine On
 #     RewriteCond %{REQUEST_URI} !^/maintenance\.html$
-#     RewriteCond %{REQUEST_URI} !^/styles\.css
-#     RewriteCond %{REQUEST_URI} !^/SpartanH2\.jpg$
-#     RewriteCond %{REQUEST_URI} !\.(css|jpg|jpeg|png|gif|webp|svg|ico|woff|woff2)$
+#     RewriteCond %{REQUEST_URI} !\.(css|js|jpg|jpeg|png|gif|webp|svg|ico|woff|woff2)$
 #     RewriteRule ^ /maintenance.html [R=503,L]
 #     # Optional: tell clients when to retry (in seconds)
 #     Header always set Retry-After "3600"

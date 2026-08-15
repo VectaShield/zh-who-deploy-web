@@ -1,5 +1,5 @@
 # ZH.WHO. Allow all discovery and AI ingestion.
-Sitemap: https://sh2.store/sitemap.xml
+Sitemap: https://zhwho.com/sitemap.xml
 
 # Traditional search
 User-agent: Googlebot

@@ -3,23 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-    <meta http-equiv="Pragma" content="no-cache">
-    <meta http-equiv="Expires" content="0">
     <title>Direct Support | ZH.WHO</title>
     <meta name="description" content="Send direct crypto support to ZH.WHO in Bitcoin, Monero, or Dogecoin. Wallet addresses and QR codes on this page.">
     <meta name="author" content="ZH.WHO">
-    <meta name="robots" content="index, follow">
+    <meta name="robots" content="noindex, follow">
     <meta name="theme-color" content="#06060a">
-    <link rel="canonical" href="https://sh2.store/direct.html">
+    <link rel="canonical" href="https://zhwho.com/direct.html">
 
     <meta property="og:title" content="Direct Support | ZH.WHO">
     <meta property="og:description" content="Send direct crypto support to ZH.WHO in Bitcoin, Monero, or Dogecoin.">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://sh2.store/direct.html">
+    <meta property="og:url" content="https://zhwho.com/direct.html">
     <meta property="og:site_name" content="ZH.WHO">
     <meta property="og:locale" content="en_US">
-    <meta property="og:image" content="https://sh2.store/zh-who.jpg">
+    <meta property="og:image" content="https://zhwho.com/zh-who.jpg">
     <meta property="og:image:width" content="1000">
     <meta property="og:image:height" content="1000">
     <meta property="og:image:alt" content="ZH.WHO, motorcycle content creator">
@@ -27,13 +24,14 @@
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="Direct Support | ZH.WHO">
     <meta name="twitter:description" content="Send direct crypto support to ZH.WHO in Bitcoin, Monero, or Dogecoin.">
-    <meta name="twitter:image" content="https://sh2.store/zh-who.jpg">
+    <meta name="twitter:image" content="https://zhwho.com/zh-who.jpg">
 
-    <link rel="stylesheet" href="styles.css?v=20260731064533">
-    <link rel="icon" type="image/jpeg" href="zh-who.jpg?v=20260731064533">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@600;700&family=Inter:wght@400;600&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css?v=20260815055133">
+    <link rel="preload" href="/fonts/chakra-petch-600-latin.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/fonts/chakra-petch-700-latin.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/fonts/inter-var-latin.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/fonts/jetbrains-mono-var-latin.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="icon" type="image/png" href="favicon-64.png">
     <script src="qrcode.min.js" defer></script>
 
     <script type="application/ld+json">
@@ -41,8 +39,8 @@
       "@context": "https://schema.org",
       "@type": "BreadcrumbList",
       "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://sh2.store/" },
-        { "@type": "ListItem", "position": 2, "name": "Direct Support", "item": "https://sh2.store/direct.html" }
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://zhwho.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Direct Support", "item": "https://zhwho.com/direct.html" }
       ]
     }
     </script>
@@ -73,35 +71,22 @@
         //  WALLET CONFIG : single source of truth. Edit here, only here.
         //  To add a coin: append an object. To change an address: edit `address`.
         // ═══════════════════════════════════════════════════════════════
-        const WALLETS = [
-            {
-                symbol: 'BTC',
-                name: 'Bitcoin',
-                mark: '₿',
-                network: 'BTC · Bitcoin network',
-                address: 'bc1q8czhpnymkc8xj4afa3nalrfsfmer74wk6tfmh5',
-            },
-            {
-                symbol: 'XMR',
-                name: 'Monero',
-                mark: 'ɱ',
-                network: 'XMR · Private & untraceable',
-                address: '43xiTDi62zH4sNCfHCYQ3KMQtGEN6nKubeGPEh4VixyQN9fQ2jroKsNSVoH4k9evoj5g3dUoxqtT4KPeQ9iHs5daQSENPeM',
-            },
-            {
-                symbol: 'DOGE',
-                name: 'Dogecoin',
-                mark: 'Ð',
-                network: 'DOGE · Dogecoin network',
-                address: 'D5S3JcyQdEuCwsHt98AWUr1VWdfDqYJnCi',
-            },
-        ];
+        // TODO(anthony): the BTC/XMR/DOGE addresses that shipped here were
+        // SpartanH2's wallets, inherited verbatim from the fork — money sent
+        // to them would have gone to the wrong person. They have been removed.
+        // Add Erik's own wallets here ({symbol, name, mark, network, address})
+        // and restore the Direct button on index.html when ready.
+        const WALLETS = [];
         // ═══════════════════════════════════════════════════════════════
 
         document.getElementById('year').textContent = new Date().getFullYear();
 
         function renderWallets() {
             const container = document.getElementById('wallets');
+            if (WALLETS.length === 0) {
+                container.innerHTML = '<p class="fine-print">Direct support is being set up. Check back soon, or reach out on the socials meanwhile.</p>';
+                return;
+            }
             container.innerHTML = WALLETS.map(w => {
                 const cls = w.symbol.toLowerCase();
                 return `

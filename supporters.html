@@ -3,23 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-    <meta http-equiv="Pragma" content="no-cache">
-    <meta http-equiv="Expires" content="0">
     <title>Supporters | ZH.WHO</title>
-    <meta name="description" content="Public thank you to the supporters keeping ZH.WHO on the road. Active Patreon supporters and direct crypto backers listed here.">
+    <meta name="description" content="Public thank you to the supporters keeping ZH.WHO on the road.">
     <meta name="author" content="ZH.WHO">
     <meta name="robots" content="index, follow">
     <meta name="theme-color" content="#06060a">
-    <link rel="canonical" href="https://sh2.store/supporters.html">
+    <link rel="canonical" href="https://zhwho.com/supporters.html">
 
     <meta property="og:title" content="Supporters | ZH.WHO">
     <meta property="og:description" content="Public thank you to the supporters keeping ZH.WHO on the road.">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://sh2.store/supporters.html">
+    <meta property="og:url" content="https://zhwho.com/supporters.html">
     <meta property="og:site_name" content="ZH.WHO">
     <meta property="og:locale" content="en_US">
-    <meta property="og:image" content="https://sh2.store/zh-who.jpg">
+    <meta property="og:image" content="https://zhwho.com/zh-who.jpg">
     <meta property="og:image:width" content="1000">
     <meta property="og:image:height" content="1000">
     <meta property="og:image:alt" content="ZH.WHO, motorcycle content creator">
@@ -27,21 +24,22 @@
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="Supporters | ZH.WHO">
     <meta name="twitter:description" content="Public thank you to the supporters keeping ZH.WHO on the road.">
-    <meta name="twitter:image" content="https://sh2.store/zh-who.jpg">
+    <meta name="twitter:image" content="https://zhwho.com/zh-who.jpg">
 
-    <link rel="stylesheet" href="styles.css?v=20260731064533">
-    <link rel="icon" type="image/jpeg" href="zh-who.jpg?v=20260731064533">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@600;700&family=Inter:wght@400;600&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css?v=20260815055133">
+    <link rel="preload" href="/fonts/chakra-petch-600-latin.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/fonts/chakra-petch-700-latin.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/fonts/inter-var-latin.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/fonts/jetbrains-mono-var-latin.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="icon" type="image/png" href="favicon-64.png">
 
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "BreadcrumbList",
       "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://sh2.store/" },
-        { "@type": "ListItem", "position": 2, "name": "Supporters", "item": "https://sh2.store/supporters.html" }
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://zhwho.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Supporters", "item": "https://zhwho.com/supporters.html" }
       ]
     }
     </script>
@@ -60,7 +58,10 @@
 
             <p class="supporters-tail" id="supporters-tail"></p>
 
-            <p class="fine-print">Want your name here? Any active Patreon tier (or a supporter role via Direct) gets you on the list. Prefer to stay anonymous? Just say so and we count you silently in the tail below.</p>
+            <!-- TODO(anthony): reworded from the forked SpartanH2 copy, which
+                 promised Patreon tiers and Direct crypto — neither exists for
+                 ZH.WHO yet. Restore the specifics when support channels ship. -->
+            <p class="fine-print">Want your name here? Supporters of the channel get on the list. Prefer to stay anonymous? Just say so and we count you silently in the tail below.</p>
         </section>
 
         <footer class="footer">
@@ -149,7 +150,7 @@
 
         (async () => {
             try {
-                const res = await fetch('supporters.json', { cache: 'no-store' });
+                const res = await fetch('supporters.json?v=20260815055133', { cache: 'no-cache' });
                 if (!res.ok) throw new Error(`HTTP ${res.status}`);
                 const data = await res.json();
                 renderSupporters(data.supporters || [], data.anonymousCount || 0);
