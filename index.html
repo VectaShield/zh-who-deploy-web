@@ -34,7 +34,7 @@
     <meta name="twitter:image" content="https://zhwho.com/zh-who.jpg">
     <meta name="twitter:image:alt" content="ZH.WHO, motorcycle content creator">
 
-    <link rel="stylesheet" href="styles.css?v=20260815055620">
+    <link rel="stylesheet" href="styles.css?v=20260815055939">
     <link rel="preload" href="/fonts/chakra-petch-600-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="/fonts/chakra-petch-700-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="/fonts/inter-var-latin.woff2" as="font" type="font/woff2" crossorigin>
@@ -103,7 +103,7 @@
 <body>
     <main class="card">
         <div class="avatar-wrap">
-            <img src="zh-who-sm.webp?v=20260815055620" alt="ZH.WHO, motorcycle content creator based in Detroit" class="avatar" width="220" height="220" fetchpriority="high">
+            <img src="zh-who-sm.webp?v=20260815055939" alt="ZH.WHO, motorcycle content creator based in Detroit" class="avatar" width="220" height="220" fetchpriority="high">
         </div>
 
         <h1 class="name">ZH<span class="accent">.WHO</span></h1>
@@ -126,19 +126,16 @@
                     <span class="icon"><svg class="icon-svg" aria-hidden="true"><use href="icons.svg#i-cart"/></svg></span><span class="label">Merch Coming Soon</span>
                 </a>
             </div>
-            <!-- TODO(anthony): no known ZH.WHO Patreon. Restore this button with
-                 the real URL if Erik sets one up.
-            <a class="link-btn support" href="" target="_blank" rel="noopener" aria-label="Patreon page" title="Patreon">
-                <span class="icon"><svg class="icon-svg" aria-hidden="true"><use href="icons.svg#i-patreon"/></svg></span><span class="label">Patreon</span>
-            </a>
-            -->
-            <!-- TODO(anthony): direct.html's crypto wallets were SpartanH2's
-                 (inherited from the fork) and have been removed. Restore this
-                 button once direct.html carries Erik's own wallet addresses.
-            <a class="link-btn support" href="direct.html" rel="noopener" aria-label="Direct crypto support" title="Direct">
-                <span class="icon"><svg class="icon-svg" aria-hidden="true"><use href="icons.svg#i-bitcoin"/></svg></span><span class="label">Direct</span>
-            </a>
-            -->
+            <div class="link-grid" style="grid-template-columns: 1fr 1fr;">
+                <!-- TODO(anthony): no known ZH.WHO Patreon — button is inert
+                     (no href) until the real URL exists. -->
+                <a class="link-btn support" aria-disabled="true" aria-label="Patreon page coming soon" title="Patreon (coming soon)">
+                    <span class="icon"><svg class="icon-svg" aria-hidden="true"><use href="icons.svg#i-patreon"/></svg></span><span class="label">Patreon</span>
+                </a>
+                <a class="link-btn support" href="direct.html" rel="noopener" aria-label="Direct crypto support" title="Direct">
+                    <span class="icon"><svg class="icon-svg" aria-hidden="true"><use href="icons.svg#i-bitcoin"/></svg></span><span class="label">Direct</span>
+                </a>
+            </div>
 
             <h2 class="section-title">Watch</h2>
             <div class="link-grid">
@@ -151,18 +148,29 @@
                 <a class="link-btn" href="https://www.tiktok.com/@zh.who" target="_blank" rel="noopener" aria-label="TikTok profile" title="TikTok">
                     <span class="icon"><svg class="icon-svg" aria-hidden="true"><use href="icons.svg#i-tiktok"/></svg></span><span class="label">TikTok</span>
                 </a>
+                <!-- TODO(anthony): the old Rumble link was SpartanH2's channel;
+                     inert until a real ZH.WHO Rumble handle exists. -->
+                <a class="link-btn" aria-disabled="true" aria-label="Rumble channel coming soon" title="Rumble (coming soon)">
+                    <span class="icon"><svg class="icon-svg" aria-hidden="true"><use href="icons.svg#i-rumble"/></svg></span><span class="label">Rumble</span>
+                </a>
             </div>
-            <!-- Rumble removed: the old link was SpartanH2's channel and no
-                 ZH.WHO Rumble is known to exist. -->
 
             <h2 class="section-title">Connect</h2>
-            <div class="link-grid" style="grid-template-columns: 1fr;">
+            <div class="link-grid">
                 <a class="link-btn" href="https://discord.gg/fz67hjDnPW" target="_blank" rel="noopener" aria-label="Discord server invite" title="Discord">
                     <span class="icon"><svg class="icon-svg" aria-hidden="true"><use href="icons.svg#i-discord"/></svg></span><span class="label">Discord</span>
                 </a>
-                <!-- X / Snapchat / Facebook removed: the old links were all
-                     SpartanH2's accounts and no ZH.WHO equivalents are known.
-                     Re-add buttons here as real handles are confirmed. -->
+                <!-- TODO(anthony): X / Snapchat / Facebook previously pointed at
+                     SpartanH2's accounts; inert until real ZH.WHO handles exist. -->
+                <a class="link-btn" aria-disabled="true" aria-label="X profile coming soon" title="X / Twitter (coming soon)">
+                    <span class="icon"><svg class="icon-svg" aria-hidden="true"><use href="icons.svg#i-x"/></svg></span><span class="label">X / Twitter</span>
+                </a>
+                <a class="link-btn" aria-disabled="true" aria-label="Snapchat coming soon" title="Snapchat (coming soon)">
+                    <span class="icon"><svg class="icon-svg" aria-hidden="true"><use href="icons.svg#i-snapchat"/></svg></span><span class="label">Snapchat</span>
+                </a>
+                <a class="link-btn" aria-disabled="true" aria-label="Facebook profile coming soon" title="Facebook (coming soon)">
+                    <span class="icon"><svg class="icon-svg" aria-hidden="true"><use href="icons.svg#i-facebook"/></svg></span><span class="label">Facebook</span>
+                </a>
             </div>
 
             <div class="meta-cta-row">
@@ -214,6 +222,6 @@
     <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
     <!-- Last script on the page: the feed is the lowest-priority thing here
          and defers its own network work until after load. -->
-    <script src="feed.js?v=20260815055620" defer></script>
+    <script src="feed.js?v=20260815055939" defer></script>
 </body>
 </html>

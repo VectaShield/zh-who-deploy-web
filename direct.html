@@ -26,7 +26,7 @@
     <meta name="twitter:description" content="Send direct crypto support to ZH.WHO in Bitcoin, Monero, or Dogecoin.">
     <meta name="twitter:image" content="https://zhwho.com/zh-who.jpg">
 
-    <link rel="stylesheet" href="styles.css?v=20260815055620">
+    <link rel="stylesheet" href="styles.css?v=20260815055939">
     <link rel="preload" href="/fonts/chakra-petch-600-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="/fonts/chakra-petch-700-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="/fonts/inter-var-latin.woff2" as="font" type="font/woff2" crossorigin>
@@ -73,10 +73,32 @@
         // ═══════════════════════════════════════════════════════════════
         // TODO(anthony): the BTC/XMR/DOGE addresses that shipped here were
         // SpartanH2's wallets, inherited verbatim from the fork — money sent
-        // to them would have gone to the wrong person. They have been removed.
-        // Add Erik's own wallets here ({symbol, name, mark, network, address})
-        // and restore the Direct button on index.html when ready.
-        const WALLETS = [];
+        // to them would have gone to the wrong person. The addresses are
+        // blanked until Erik supplies his own; a blank address renders as
+        // "Coming soon" with no copy button or QR.
+        const WALLETS = [
+            {
+                symbol: 'BTC',
+                name: 'Bitcoin',
+                mark: '₿',
+                network: 'BTC · Bitcoin network',
+                address: '',
+            },
+            {
+                symbol: 'XMR',
+                name: 'Monero',
+                mark: 'ɱ',
+                network: 'XMR · Private & untraceable',
+                address: '',
+            },
+            {
+                symbol: 'DOGE',
+                name: 'Dogecoin',
+                mark: 'Ð',
+                network: 'DOGE · Dogecoin network',
+                address: '',
+            },
+        ];
         // ═══════════════════════════════════════════════════════════════
 
         document.getElementById('year').textContent = new Date().getFullYear();
@@ -89,6 +111,20 @@
             }
             container.innerHTML = WALLETS.map(w => {
                 const cls = w.symbol.toLowerCase();
+                // Blank address = wallet not set up yet: show "Coming soon",
+                // no copy button, no QR.
+                const body = w.address
+                    ? `
+                        <div class="addr-row">
+                            <code class="addr" data-address="${w.address}">${w.address}</code>
+                            <button type="button" class="copy-btn" aria-label="Copy ${w.name} address">Copy</button>
+                        </div>
+                        <a class="qr-link" href="#" aria-label="Show ${w.name} QR code">Show QR</a>
+                        <div class="qr-slot" hidden></div>`
+                    : `
+                        <div class="addr-row">
+                            <code class="addr">Coming soon</code>
+                        </div>`;
                 return `
                     <article class="crypto-card" data-symbol="${w.symbol}">
                         <header class="crypto-head">
@@ -97,13 +133,7 @@
                                 <h3>${w.name}</h3>
                                 <span class="crypto-net">${w.network}</span>
                             </div>
-                        </header>
-                        <div class="addr-row">
-                            <code class="addr" data-address="${w.address}">${w.address}</code>
-                            <button type="button" class="copy-btn" aria-label="Copy ${w.name} address">Copy</button>
-                        </div>
-                        <a class="qr-link" href="#" aria-label="Show ${w.name} QR code">Show QR</a>
-                        <div class="qr-slot" hidden></div>
+                        </header>${body}
                     </article>
                 `;
             }).join('');
@@ -111,6 +141,7 @@
 
         function wireCard(card) {
             const addr = card.querySelector('.addr').dataset.address;
+            if (!addr) return; // "Coming soon" card: nothing to wire
             const copyBtn = card.querySelector('.copy-btn');
             const qrLink = card.querySelector('.qr-link');
             const slot = card.querySelector('.qr-slot');
