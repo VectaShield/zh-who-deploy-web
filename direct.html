@@ -6,7 +6,7 @@
     <title>Direct Support | ZH.WHO</title>
     <meta name="description" content="Send direct crypto support to ZH.WHO in Bitcoin, Monero, or Dogecoin. Wallet addresses and QR codes on this page.">
     <meta name="author" content="ZH.WHO">
-    <meta name="robots" content="index, follow">
+    <meta name="robots" content="noindex, follow">
     <meta name="theme-color" content="#06060a">
     <link rel="canonical" href="https://zhwho.com/direct.html">
 
@@ -26,7 +26,7 @@
     <meta name="twitter:description" content="Send direct crypto support to ZH.WHO in Bitcoin, Monero, or Dogecoin.">
     <meta name="twitter:image" content="https://zhwho.com/og-image.png?v=1">
 
-    <link rel="stylesheet" href="styles.css?v=20260816184753">
+    <link rel="stylesheet" href="styles.css?v=20260816184959">
     <link rel="preload" href="/fonts/chakra-petch-600-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="/fonts/chakra-petch-700-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="/fonts/inter-var-latin.woff2" as="font" type="font/woff2" crossorigin>
@@ -72,34 +72,36 @@
         //  WALLET CONFIG : single source of truth. Edit here, only here.
         //  To add a coin: append an object. To change an address: edit `address`.
         // ═══════════════════════════════════════════════════════════════
-        // These are the SpartanH2 wallets, restored at Anthony's request
-        // (2026-08-16) and matching src/direct.html on spartanh2.com.
-        // NOTE: direct support given on zhwho.com therefore lands in the
-        // SpartanH2 wallets, not a separate Zh.Who one. Swap these if Erik
-        // should ever receive his own.
-        // A blank address still renders as "Coming soon" with no copy button
-        // or QR, so a coin can be parked by emptying its address.
+        // TODO(anthony): addresses intentionally blank. An empty address
+        // renders as "Coming soon" with no copy button and no QR, so a coin
+        // is parked simply by emptying it and goes live again by pasting one
+        // back in; no other edit needed.
+        //
+        // The SpartanH2 wallets live in src/direct.html on spartanh2.com if
+        // they are ever wanted here again (they were briefly restored on
+        // 2026-08-16 to test the deploy pipeline, then blanked again).
+        // Careful: those send funds to SpartanH2, not to Erik.
         const WALLETS = [
             {
                 symbol: 'BTC',
                 name: 'Bitcoin',
                 mark: '₿',
                 network: 'BTC · Bitcoin network',
-                address: 'bc1q8czhpnymkc8xj4afa3nalrfsfmer74wk6tfmh5',
+                address: '',
             },
             {
                 symbol: 'XMR',
                 name: 'Monero',
                 mark: 'ɱ',
                 network: 'XMR · Private & untraceable',
-                address: '43xiTDi62zH4sNCfHCYQ3KMQtGEN6nKubeGPEh4VixyQN9fQ2jroKsNSVoH4k9evoj5g3dUoxqtT4KPeQ9iHs5daQSENPeM',
+                address: '',
             },
             {
                 symbol: 'DOGE',
                 name: 'Dogecoin',
                 mark: 'Ð',
                 network: 'DOGE · Dogecoin network',
-                address: 'D5S3JcyQdEuCwsHt98AWUr1VWdfDqYJnCi',
+                address: '',
             },
         ];
         // ═══════════════════════════════════════════════════════════════
