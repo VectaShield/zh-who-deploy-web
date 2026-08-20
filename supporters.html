@@ -26,7 +26,7 @@
     <meta name="twitter:description" content="Public thank you to the supporters keeping ZH.WHO on the road.">
     <meta name="twitter:image" content="https://zhwho.com/og-image.png?v=1">
 
-    <link rel="stylesheet" href="styles.css?v=20260819190645">
+    <link rel="stylesheet" href="styles.css?v=49552434d8">
     <link rel="preload" href="/fonts/chakra-petch-600-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="/fonts/chakra-petch-700-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="/fonts/inter-var-latin.woff2" as="font" type="font/woff2" crossorigin>
@@ -129,7 +129,7 @@
                 const tierClass = tier.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '');
                 const igHandle = s.instagram ? encodeURIComponent(s.instagram) : '';
                 const igLink = igHandle
-                    ? `<a class="supporter-ig" href="https://www.instagram.com/${igHandle}/" target="_blank" rel="noopener" aria-label="${esc(s.name)} on Instagram" title="@${esc(s.instagram)}"><svg class="icon-svg" aria-hidden="true"><use href="icons.svg#i-instagram"/></svg></a>`
+                    ? `<a class="supporter-ig" href="https://www.instagram.com/${igHandle}/" target="_blank" rel="noopener" aria-label="${esc(s.name)} on Instagram" title="@${esc(s.instagram)}"><svg class="icon-svg" aria-hidden="true"><use href="icons.svg?v=9e509bba11#i-instagram"/></svg></a>`
                     : '';
                 return `
                     <div class="supporter-row ${ms}">
@@ -151,7 +151,7 @@
 
         (async () => {
             try {
-                const res = await fetch('supporters.json?v=20260819190645', { cache: 'no-cache' });
+                const res = await fetch('supporters.json?v=2d2b8ce6f6', { cache: 'no-cache' });
                 if (!res.ok) throw new Error(`HTTP ${res.status}`);
                 const data = await res.json();
                 renderSupporters(data.supporters || [], data.anonymousCount || 0);
