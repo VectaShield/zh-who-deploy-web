@@ -17,13 +17,13 @@
   ],
   "_auto": "Auto-refreshed hourly by scripts/refresh-videos.mjs. Hand-edited \"note\" text is preserved by video id; \"views\" is re-pulled from TikTok (monotonic: never decreases). New/removed videos ship immediately; view-count-only changes are written at most every 6 hours to limit deploy churn. _lastRefresh records the last successful write.",
   "_lastRefresh": {
-    "at": "2026-08-21T23:55:47.475Z"
+    "at": "2026-08-22T05:58:01.314Z"
   },
   "videos": [
     {
       "url": "https://www.tiktok.com/@zh.who/video/7668049880547380511",
       "date": "2026-07-29",
-      "views": 4553,
+      "views": 4571,
       "note": "We set out to be the first bikes across the Gordie Howe Bridg…"
     },
     {
@@ -35,13 +35,13 @@
     {
       "url": "https://www.tiktok.com/@zh.who/video/7663921265702423839",
       "date": "2026-07-18",
-      "views": 2401,
+      "views": 2404,
       "note": "Just another Saturday night in Detroit 🔥 with H2 Has any one…"
     },
     {
       "url": "https://www.tiktok.com/@zh.who/video/7660978836166774047",
       "date": "2026-07-10",
-      "views": 247,
+      "views": 248,
       "note": "Big Things in store for the ZH2 👀 Extreme Creation intercool…"
     },
     {
@@ -53,7 +53,7 @@
     {
       "url": "https://www.tiktok.com/@zh.who/video/7653891716562390302",
       "date": "2026-06-21",
-      "views": 790,
+      "views": 793,
       "note": "First time ever at the drag strip 👀👀 Z900 VS ZH2"
     },
     {
