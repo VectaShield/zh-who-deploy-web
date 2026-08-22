@@ -17,31 +17,31 @@
   ],
   "_auto": "Auto-refreshed hourly by scripts/refresh-videos.mjs. Hand-edited \"note\" text is preserved by video id; \"views\" is re-pulled from TikTok (monotonic: never decreases). New/removed videos ship immediately; view-count-only changes are written at most every 6 hours to limit deploy churn. _lastRefresh records the last successful write.",
   "_lastRefresh": {
-    "at": "2026-08-22T05:58:01.314Z"
+    "at": "2026-08-22T13:16:38.102Z"
   },
   "videos": [
     {
       "url": "https://www.tiktok.com/@zh.who/video/7668049880547380511",
       "date": "2026-07-29",
-      "views": 4571,
+      "views": 4582,
       "note": "We set out to be the first bikes across the Gordie Howe Bridg…"
     },
     {
       "url": "https://www.tiktok.com/@zh.who/video/7667202527334567199",
       "date": "2026-07-27",
-      "views": 638,
+      "views": 639,
       "note": "Are we being followed??? PART 2 wild night in Detroit Camera…"
     },
     {
       "url": "https://www.tiktok.com/@zh.who/video/7663921265702423839",
       "date": "2026-07-18",
-      "views": 2404,
+      "views": 2405,
       "note": "Just another Saturday night in Detroit 🔥 with H2 Has any one…"
     },
     {
       "url": "https://www.tiktok.com/@zh.who/video/7660978836166774047",
       "date": "2026-07-10",
-      "views": 248,
+      "views": 249,
       "note": "Big Things in store for the ZH2 👀 Extreme Creation intercool…"
     },
     {
