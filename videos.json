@@ -17,43 +17,43 @@
   ],
   "_auto": "Auto-refreshed hourly by scripts/refresh-videos.mjs. Hand-edited \"note\" text is preserved by video id; \"views\" is re-pulled from TikTok (monotonic: never decreases). New/removed videos ship immediately; view-count-only changes are written at most every 6 hours to limit deploy churn. _lastRefresh records the last successful write.",
   "_lastRefresh": {
-    "at": "2026-08-22T19:52:29.965Z"
+    "at": "2026-08-23T02:12:17.287Z"
   },
   "videos": [
     {
       "url": "https://www.tiktok.com/@zh.who/video/7668049880547380511",
       "date": "2026-07-29",
-      "views": 4592,
+      "views": 4600,
       "note": "We set out to be the first bikes across the Gordie Howe Bridg…"
     },
     {
       "url": "https://www.tiktok.com/@zh.who/video/7667202527334567199",
       "date": "2026-07-27",
-      "views": 640,
+      "views": 641,
       "note": "Are we being followed??? PART 2 wild night in Detroit Camera…"
     },
     {
       "url": "https://www.tiktok.com/@zh.who/video/7663921265702423839",
       "date": "2026-07-18",
-      "views": 2408,
+      "views": 2412,
       "note": "Just another Saturday night in Detroit 🔥 with H2 Has any one…"
     },
     {
       "url": "https://www.tiktok.com/@zh.who/video/7660978836166774047",
       "date": "2026-07-10",
-      "views": 249,
+      "views": 250,
       "note": "Big Things in store for the ZH2 👀 Extreme Creation intercool…"
     },
     {
       "url": "https://www.tiktok.com/@zh.who/video/7658398334184394015",
       "date": "2026-07-03",
-      "views": 1013,
+      "views": 1014,
       "note": "Fun police out in force at the train station meet."
     },
     {
       "url": "https://www.tiktok.com/@zh.who/video/7653891716562390302",
       "date": "2026-06-21",
-      "views": 795,
+      "views": 797,
       "note": "First time ever at the drag strip 👀👀 Z900 VS ZH2"
     },
     {
