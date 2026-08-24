@@ -17,19 +17,19 @@
   ],
   "_auto": "Auto-refreshed hourly by scripts/refresh-videos.mjs. Hand-edited \"note\" text is preserved by video id; \"views\" is re-pulled from TikTok (monotonic: never decreases). New/removed videos ship immediately; view-count-only changes are written at most every 6 hours to limit deploy churn. _lastRefresh records the last successful write.",
   "_lastRefresh": {
-    "at": "2026-08-23T22:54:36.294Z"
+    "at": "2026-08-24T05:23:08.970Z"
   },
   "videos": [
     {
       "url": "https://www.tiktok.com/@zh.who/video/7668049880547380511",
       "date": "2026-07-29",
-      "views": 4645,
+      "views": 4659,
       "note": "We set out to be the first bikes across the Gordie Howe Bridg…"
     },
     {
       "url": "https://www.tiktok.com/@zh.who/video/7667202527334567199",
       "date": "2026-07-27",
-      "views": 643,
+      "views": 645,
       "note": "Are we being followed??? PART 2 wild night in Detroit Camera…"
     },
     {
@@ -53,7 +53,7 @@
     {
       "url": "https://www.tiktok.com/@zh.who/video/7653891716562390302",
       "date": "2026-06-21",
-      "views": 798,
+      "views": 800,
       "note": "First time ever at the drag strip 👀👀 Z900 VS ZH2"
     },
     {
