@@ -17,61 +17,67 @@
   ],
   "_auto": "Auto-refreshed hourly by scripts/refresh-videos.mjs. Hand-edited \"note\" text is preserved by video id; \"views\" is re-pulled from TikTok (monotonic: never decreases). New/removed videos ship immediately; view-count-only changes are written at most every 6 hours to limit deploy churn. _lastRefresh records the last successful write.",
   "_lastRefresh": {
-    "at": "2026-08-25T14:25:14.643Z"
+    "at": "2026-08-25T19:16:23.560Z"
   },
   "videos": [
     {
+      "url": "https://www.tiktok.com/@zh.who/video/7678033875888557342",
+      "date": "2026-08-25",
+      "views": 112,
+      "note": "Boss fight at the Milan Dragway.🏁 Got lucky H2 had the new b…"
+    },
+    {
       "url": "https://www.tiktok.com/@zh.who/video/7668049880547380511",
       "date": "2026-07-29",
-      "views": 4702,
+      "views": 4713,
       "note": "We set out to be the first bikes across the Gordie Howe Bridg…"
     },
     {
       "url": "https://www.tiktok.com/@zh.who/video/7667202527334567199",
       "date": "2026-07-27",
-      "views": 653,
+      "views": 655,
       "note": "Are we being followed??? PART 2 wild night in Detroit Camera…"
     },
     {
       "url": "https://www.tiktok.com/@zh.who/video/7663921265702423839",
       "date": "2026-07-18",
-      "views": 2433,
+      "views": 2438,
       "note": "Just another Saturday night in Detroit 🔥 with H2 Has any one…"
     },
     {
       "url": "https://www.tiktok.com/@zh.who/video/7660978836166774047",
       "date": "2026-07-10",
-      "views": 251,
+      "views": 253,
       "note": "Big Things in store for the ZH2 👀 Extreme Creation intercool…"
     },
     {
       "url": "https://www.tiktok.com/@zh.who/video/7658398334184394015",
       "date": "2026-07-03",
-      "views": 1015,
+      "views": 1016,
       "note": "Fun police out in force at the train station meet."
     },
     {
       "url": "https://www.tiktok.com/@zh.who/video/7653891716562390302",
       "date": "2026-06-21",
-      "views": 801,
+      "views": 804,
       "note": "First time ever at the drag strip 👀👀 Z900 VS ZH2"
     },
     {
       "url": "https://www.tiktok.com/@zh.who/video/7636132336362409246",
       "date": "2026-05-04",
-      "views": 828,
+      "views": 831,
       "note": "Poor homie 😓😓 Some more clips from Detroit"
     },
     {
       "url": "https://www.tiktok.com/@zh.who/video/7633923121765993758",
       "date": "2026-04-28",
-      "views": 776,
+      "views": 781,
       "note": "People were rocking with the supercharged 🏍 Detroit"
     },
     {
       "url": "https://www.tiktok.com/@zh.who/video/7578642777282563358",
       "date": "2025-11-30",
-      "views": 532,
+      "views": 537,
       "note": "RAM 2500 VS Drone 😓"
     }
   ]
