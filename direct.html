@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Direct Support | ZH.WHO</title>
-    <meta name="description" content="Send direct crypto support to ZH.WHO in Bitcoin, Monero, or Dogecoin. Wallet addresses and QR codes on this page.">
+    <meta name="description" content="Send direct crypto support to ZH.WHO in Bitcoin, Ethereum, Solana, or Dogecoin. Wallet addresses and QR codes on this page.">
     <meta name="author" content="ZH.WHO">
     <meta name="robots" content="noindex, follow">
     <meta name="theme-color" content="#06060a">
     <link rel="canonical" href="https://zhwho.com/direct.html">
 
     <meta property="og:title" content="Direct Support | ZH.WHO">
-    <meta property="og:description" content="Send direct crypto support to ZH.WHO in Bitcoin, Monero, or Dogecoin.">
+    <meta property="og:description" content="Send direct crypto support to ZH.WHO in Bitcoin, Ethereum, Solana, or Dogecoin.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://zhwho.com/direct.html">
     <meta property="og:site_name" content="ZH.WHO">
@@ -23,10 +23,10 @@
 
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Direct Support | ZH.WHO">
-    <meta name="twitter:description" content="Send direct crypto support to ZH.WHO in Bitcoin, Monero, or Dogecoin.">
+    <meta name="twitter:description" content="Send direct crypto support to ZH.WHO in Bitcoin, Ethereum, Solana, or Dogecoin.">
     <meta name="twitter:image" content="https://zhwho.com/og-image.png?v=1">
 
-    <link rel="stylesheet" href="styles.css?v=49552434d8">
+    <link rel="stylesheet" href="styles.css?v=4f65146a3d">
     <link rel="preload" href="/fonts/chakra-petch-600-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="/fonts/chakra-petch-700-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="/fonts/inter-var-latin.woff2" as="font" type="font/woff2" crossorigin>
@@ -58,7 +58,7 @@
 
             <div id="wallets"></div>
 
-            <p class="fine-print">Always verify the network before sending. Coins sent to the wrong network (for example DOGE to a BTC address) will be permanently lost.</p>
+            <p class="fine-print">Always verify the network before sending. Coins sent to the wrong network (ETH to a Solana address, DOGE to a Bitcoin address) will be permanently lost. The Ethereum address takes ETH and ERC-20 tokens on Ethereum mainnet only.</p>
         </section>
 
         <footer class="footer">
@@ -72,35 +72,54 @@
         //  WALLET CONFIG : single source of truth. Edit here, only here.
         //  To add a coin: append an object. To change an address: edit `address`.
         // ═══════════════════════════════════════════════════════════════
-        // TODO(anthony): addresses intentionally blank. An empty address
-        // renders as "Coming soon" with no copy button and no QR, so a coin
-        // is parked simply by emptying it and goes live again by pasting one
-        // back in; no other edit needed.
+        // Addresses supplied by Anthony on 2026-09-08 and checksum-verified
+        // before going live, because a single wrong character sends a
+        // supporter's money somewhere unrecoverable:
+        //   BTC  bech32 checksum valid (hrp=bc, witness v0)
+        //   DOGE base58check valid (version byte 0x1e = Dogecoin P2PKH)
+        //   ETH  EIP-55 mixed-case checksum valid
+        //   SOL  decodes to a 32-byte ed25519 public key (Solana carries no
+        //        checksum of its own, so length is the only check possible)
+        // Re-verify the same way if any of these are ever edited.
         //
-        // The SpartanH2 wallets live in src/direct.html on spartanh2.com if
-        // they are ever wanted here again (they were briefly restored on
-        // 2026-08-16 to test the deploy pipeline, then blanked again).
-        // Careful: those send funds to SpartanH2, not to Erik.
+        // An empty address renders as "Coming soon" with no copy button and
+        // no QR, so a coin is parked by emptying it and goes live again by
+        // pasting one back in; no other edit needed. Monero is held open
+        // that way at Anthony's request until a wallet exists.
         const WALLETS = [
             {
                 symbol: 'BTC',
                 name: 'Bitcoin',
                 mark: '₿',
-                network: 'BTC · Bitcoin network',
-                address: '',
+                network: 'BTC · Bitcoin network (SegWit)',
+                address: 'bc1qfxhghcc4q2wqryl3ymnempungrtp7yzkpled34',
             },
             {
-                symbol: 'XMR',
-                name: 'Monero',
-                mark: 'ɱ',
-                network: 'XMR · Private & untraceable',
-                address: '',
+                symbol: 'ETH',
+                name: 'Ethereum',
+                mark: 'Ξ',
+                network: 'ETH · Ethereum mainnet (ERC-20)',
+                address: '0x533e604ba065C20ee571e8733504999068A9c5f6',
+            },
+            {
+                symbol: 'SOL',
+                name: 'Solana',
+                mark: '◎',
+                network: 'SOL · Solana mainnet',
+                address: '6MNLeNYYoiVbcb2Go4uGKEXTVD9Treyve8J6ibVUxH8K',
             },
             {
                 symbol: 'DOGE',
                 name: 'Dogecoin',
                 mark: 'Ð',
                 network: 'DOGE · Dogecoin network',
+                address: 'D7vbZdQGrKH8ZEwZ5i4xueXUr4j1D7nk7A',
+            },
+            {
+                symbol: 'XMR',
+                name: 'Monero',
+                mark: 'ɱ',
+                network: 'XMR · Private & untraceable',
                 address: '',
             },
         ];
