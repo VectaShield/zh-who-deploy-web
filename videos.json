@@ -17,19 +17,19 @@
   ],
   "_auto": "Auto-refreshed hourly by scripts/refresh-videos.mjs. Hand-edited \"note\" text is preserved by video id; \"views\" is re-pulled from TikTok (monotonic: never decreases). New/removed videos ship immediately; view-count-only changes are written at most every 6 hours to limit deploy churn. _lastRefresh records the last successful write.",
   "_lastRefresh": {
-    "at": "2026-09-28T20:45:37.633Z"
+    "at": "2026-09-29T07:28:45.798Z"
   },
   "videos": [
     {
       "url": "https://www.tiktok.com/@zh.who/video/7690417056231001374",
       "date": "2026-09-28",
-      "views": 2459,
+      "views": 2605,
       "note": "1 Police Helicopter , 3 Cop cars 🚔🚓🚨 All for X group ride…"
     },
     {
       "url": "https://www.tiktok.com/@zh.who/video/7687822801679568159",
       "date": "2026-09-21",
-      "views": 1008,
+      "views": 1017,
       "note": "What bike would you choose? 🏍🔥👀👀 ZH2,H2SX,GSXR1000,ZX14R?…"
     },
     {
@@ -41,43 +41,43 @@
     {
       "url": "https://www.tiktok.com/@zh.who/video/7686189400597777694",
       "date": "2026-09-16",
-      "views": 5791,
+      "views": 5924,
       "note": "Truck crashed and flipped his trailer 🚨😬🫣 Tried to help 🤷…"
     },
     {
       "url": "https://www.tiktok.com/@zh.who/video/7684766664193330462",
       "date": "2026-09-12",
-      "views": 20000,
+      "views": 20100,
       "note": "HIT AND RUN AT BIKES ON THE BRICKS FLINT MICHIGAN. FOLLOW FOR…"
     },
     {
       "url": "https://www.tiktok.com/@zh.who/video/7682510288125463839",
       "date": "2026-09-06",
-      "views": 15600,
+      "views": 15800,
       "note": "Semi truck VS ZH2. Close call had me worried 😅✌️"
     },
     {
       "url": "https://www.tiktok.com/@zh.who/video/7679986876731739423",
       "date": "2026-08-31",
-      "views": 38800,
+      "views": 41400,
       "note": "Bros ex left him for a biker so he doesn't like bikes ✌️🥀😅 H2"
     },
     {
       "url": "https://www.tiktok.com/@zh.who/video/7678033875888557342",
       "date": "2026-08-25",
-      "views": 1450,
+      "views": 1451,
       "note": "Boss fight at the Milan Dragway.🏁 Got lucky H2 had the new b…"
     },
     {
       "url": "https://www.tiktok.com/@zh.who/video/7668049880547380511",
       "date": "2026-07-29",
-      "views": 5500,
+      "views": 5507,
       "note": "We set out to be the first bikes across the Gordie Howe Bridg…"
     },
     {
       "url": "https://www.tiktok.com/@zh.who/video/7667202527334567199",
       "date": "2026-07-27",
-      "views": 1052,
+      "views": 1053,
       "note": "Are we being followed??? PART 2 wild night in Detroit Camera…"
     },
     {
