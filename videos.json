@@ -17,19 +17,19 @@
   ],
   "_auto": "Auto-refreshed hourly by scripts/refresh-videos.mjs. Hand-edited \"note\" text is preserved by video id; \"views\" is re-pulled from TikTok (monotonic: never decreases). New/removed videos ship immediately; view-count-only changes are written at most every 6 hours to limit deploy churn. _lastRefresh records the last successful write.",
   "_lastRefresh": {
-    "at": "2026-10-03T17:35:21.970Z"
+    "at": "2026-10-04T02:50:57.256Z"
   },
   "videos": [
     {
       "url": "https://www.tiktok.com/@zh.who/video/7690417056231001374",
       "date": "2026-09-28",
-      "views": 2840,
+      "views": 2849,
       "note": "1 Police Helicopter , 3 Cop cars 🚔🚓🚨 All for X group ride…"
     },
     {
       "url": "https://www.tiktok.com/@zh.who/video/7687822801679568159",
       "date": "2026-09-21",
-      "views": 1068,
+      "views": 1075,
       "note": "What bike would you choose? 🏍🔥👀👀 ZH2,H2SX,GSXR1000,ZX14R?…"
     },
     {
@@ -41,13 +41,13 @@
     {
       "url": "https://www.tiktok.com/@zh.who/video/7686189400597777694",
       "date": "2026-09-16",
-      "views": 8165,
+      "views": 8527,
       "note": "Truck crashed and flipped his trailer 🚨😬🫣 Tried to help 🤷…"
     },
     {
       "url": "https://www.tiktok.com/@zh.who/video/7684766664193330462",
       "date": "2026-09-12",
-      "views": 20800,
+      "views": 21100,
       "note": "HIT AND RUN AT BIKES ON THE BRICKS FLINT MICHIGAN. FOLLOW FOR…"
     },
     {
@@ -71,7 +71,7 @@
     {
       "url": "https://www.tiktok.com/@zh.who/video/7668049880547380511",
       "date": "2026-07-29",
-      "views": 6162,
+      "views": 6166,
       "note": "We set out to be the first bikes across the Gordie Howe Bridg…"
     },
     {
