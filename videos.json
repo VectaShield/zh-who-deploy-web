@@ -17,9 +17,15 @@
   ],
   "_auto": "Auto-refreshed hourly by scripts/refresh-videos.mjs. Hand-edited \"note\" text is preserved by video id; \"views\" is re-pulled from TikTok (monotonic: never decreases). New/removed videos ship immediately; view-count-only changes are written at most every 6 hours to limit deploy churn. _lastRefresh records the last successful write.",
   "_lastRefresh": {
-    "at": "2026-10-05T07:39:25.581Z"
+    "at": "2026-10-05T16:22:35.730Z"
   },
   "videos": [
+    {
+      "url": "https://www.tiktok.com/@zh.who/video/7693050656894045471",
+      "date": "2026-10-05",
+      "views": 104,
+      "note": "Who flooded my race track 😔🏍️ Turning this thing into a sup…"
+    },
     {
       "url": "https://www.tiktok.com/@zh.who/video/7692943661096586527",
       "date": "2026-10-04",
@@ -29,13 +35,13 @@
     {
       "url": "https://www.tiktok.com/@zh.who/video/7690417056231001374",
       "date": "2026-09-28",
-      "views": 2890,
+      "views": 2895,
       "note": "1 Police Helicopter , 3 Cop cars 🚔🚓🚨 All for X group ride…"
     },
     {
       "url": "https://www.tiktok.com/@zh.who/video/7687822801679568159",
       "date": "2026-09-21",
-      "views": 1098,
+      "views": 1103,
       "note": "What bike would you choose? 🏍🔥👀👀 ZH2,H2SX,GSXR1000,ZX14R?…"
     },
     {
@@ -47,13 +53,13 @@
     {
       "url": "https://www.tiktok.com/@zh.who/video/7686189400597777694",
       "date": "2026-09-16",
-      "views": 11800,
+      "views": 12400,
       "note": "Truck crashed and flipped his trailer 🚨😬🫣 Tried to help 🤷…"
     },
     {
       "url": "https://www.tiktok.com/@zh.who/video/7684766664193330462",
       "date": "2026-09-12",
-      "views": 23800,
+      "views": 25200,
       "note": "HIT AND RUN AT BIKES ON THE BRICKS FLINT MICHIGAN. FOLLOW FOR…"
     },
     {
@@ -71,13 +77,13 @@
     {
       "url": "https://www.tiktok.com/@zh.who/video/7678033875888557342",
       "date": "2026-08-25",
-      "views": 1477,
+      "views": 1482,
       "note": "Boss fight at the Milan Dragway.🏁 Got lucky H2 had the new b…"
     },
     {
       "url": "https://www.tiktok.com/@zh.who/video/7668049880547380511",
       "date": "2026-07-29",
-      "views": 6184,
+      "views": 6186,
       "note": "We set out to be the first bikes across the Gordie Howe Bridg…"
     },
     {
