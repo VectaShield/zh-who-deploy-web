@@ -23,10 +23,12 @@
     "tiktok": "https://www.tiktok.com/@zh.who",
     "instagram": "https://www.instagram.com/zh.who/",
     "youtube": "https://www.youtube.com/@zhwho",
-    "discord": "https://discord.gg/fz67hjDnPW"
+    "discord": "https://discord.gg/fz67hjDnPW",
+    "facebook": "https://www.facebook.com/people/ZHWHO/61593486208088/"
   },
   "support": {
-    "merch_coming_soon": "https://zhwho.com/coming-soon.html"
+    "merch_coming_soon": "https://zhwho.com/coming-soon.html",
+    "direct": "https://zhwho.com/direct.html"
   },
   "contact": "https://zhwho.com/contact.html"
 }
