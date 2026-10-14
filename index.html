@@ -34,7 +34,7 @@
     <meta name="twitter:image" content="https://zhwho.com/og-image.png?v=1">
     <meta name="twitter:image:alt" content="ZH.WHO, motorcycle content creator">
 
-    <link rel="stylesheet" href="styles.css?v=4f65146a3d">
+    <link rel="stylesheet" href="styles.css?v=ef9fc4d2fe">
     <link rel="preload" href="/fonts/chakra-petch-600-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="/fonts/chakra-petch-700-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="/fonts/inter-var-latin.woff2" as="font" type="font/woff2" crossorigin>
@@ -195,6 +195,14 @@
             </div>
         </section>
 
+        <!-- Upcoming events from the shared Moto Legion calendar
+             (themotolegion.com/events.json). The inline script at the bottom
+             of the page fetches it cross-origin and renders only events whose
+             who list names zhwho or themotolegion; with nothing upcoming the
+             strip stays empty and takes no space. See the calendar repo's
+             docs/events-calendar.md for the fan-out rules. -->
+        <div id="event-strip"></div>
+
         <!-- Latest TikTok uploads. Hidden until feed.js has data so the
              section never flashes an empty heading; feed.js only fetches
              once the page is idle and the section nears the viewport.
@@ -230,6 +238,81 @@
     </main>
 
     <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+    <!-- Shared Moto Legion events calendar. One fetch of the hub's
+         events.json (CORS is open there; the ?v= buster rolls hourly so the
+         one-hour edge cache never serves a stale day). Any failure leaves
+         the strip empty, identical to having no upcoming events. -->
+    <script>
+    (function () {
+        'use strict';
+
+        var MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+        var EVENTS_URL = 'https://themotolegion.com/events.json?v=' + Math.floor(Date.now() / 3600000);
+
+        function pad2(n) { return (n < 10 ? '0' : '') + n; }
+
+        function forUs(e) {
+            return (e.who || []).some(function (w) {
+                return w === 'zhwho' || w === 'themotolegion';
+            });
+        }
+
+        fetch(EVENTS_URL).then(function (r) { return r.json(); }).then(function (data) {
+            var d = new Date();
+            var today = d.getFullYear() + '-' + pad2(d.getMonth() + 1) + '-' + pad2(d.getDate());
+            var strip = document.getElementById('event-strip');
+            (data.events || []).filter(function (e) {
+                return e.date >= today && forUs(e);
+            }).sort(function (a, b) {
+                return a.date < b.date ? -1 : a.date > b.date ? 1 : 0;
+            }).forEach(function (e) {
+                var p = e.date.split('-');
+                var tile = document.createElement('a');
+                tile.className = 'event-tile';
+                tile.href = e.url;
+                tile.target = '_blank';
+                tile.rel = 'noopener';
+                tile.setAttribute('aria-label', e.aria ||
+                    (e.name + ', ' + MONTHS[+p[1] - 1] + ' ' + (+p[2]) + '. ' + e.times + '. ' + e.where + '.'));
+
+                var date = document.createElement('span');
+                date.className = 'event-date';
+                var mon = document.createElement('span');
+                mon.className = 'event-mon';
+                mon.textContent = MONTHS[+p[1] - 1];
+                var day = document.createElement('span');
+                day.className = 'event-day';
+                day.textContent = +p[2];
+                date.appendChild(mon);
+                date.appendChild(day);
+
+                var info = document.createElement('span');
+                info.className = 'event-info';
+                var name = document.createElement('span');
+                name.className = 'event-name';
+                name.textContent = e.name;
+                var times = document.createElement('span');
+                times.className = 'event-times';
+                times.textContent = e.times;
+                info.appendChild(name);
+                info.appendChild(times);
+
+                var where = document.createElement('span');
+                where.className = 'event-where';
+                where.appendChild(document.createTextNode(e.where + ' '));
+                var arrow = document.createElement('span');
+                arrow.className = 'event-arrow';
+                arrow.textContent = '→';
+                where.appendChild(arrow);
+
+                tile.appendChild(date);
+                tile.appendChild(info);
+                tile.appendChild(where);
+                strip.appendChild(tile);
+            });
+        }).catch(function () { /* unreachable hub reads as no upcoming events */ });
+    })();
+    </script>
     <!-- Deferred so it runs after parse but before first paint, which is what
          lets it put one frame up synchronously and avoid a blank-canvas flash. -->
     <script src="rain.js?v=b2a6d717f4" defer></script>
