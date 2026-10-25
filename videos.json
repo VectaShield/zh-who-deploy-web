@@ -17,31 +17,31 @@
   ],
   "_auto": "Auto-refreshed hourly by scripts/refresh-videos.mjs. Hand-edited \"note\" text is preserved by video id; \"views\" is re-pulled from TikTok (monotonic: never decreases). New/removed videos ship immediately; view-count-only changes are written at most every 6 hours to limit deploy churn. _lastRefresh records the last successful write.",
   "_lastRefresh": {
-    "at": "2026-10-25T06:47:26.122Z"
+    "at": "2026-10-25T17:12:16.997Z"
   },
   "videos": [
     {
       "url": "https://www.tiktok.com/@zh.who/video/7697664944082406687",
       "date": "2026-10-17",
-      "views": 1622,
+      "views": 1629,
       "note": "The MOM was NOT happy when they wanted motorcycles 💀 PART 2/…"
     },
     {
       "url": "https://www.tiktok.com/@zh.who/video/7697330032498199839",
       "date": "2026-10-16",
-      "views": 6096,
+      "views": 6097,
       "note": "POV: You stop at a gas station in Detroit for 2 minutes 💀🤣P…"
     },
     {
       "url": "https://www.tiktok.com/@zh.who/video/7693050656894045471",
       "date": "2026-10-05",
-      "views": 2456,
+      "views": 2461,
       "note": "Who flooded my race track 😔🏍️ Turning this thing into a sup…"
     },
     {
       "url": "https://www.tiktok.com/@zh.who/video/7690417056231001374",
       "date": "2026-09-28",
-      "views": 3259,
+      "views": 3262,
       "note": "1 Police Helicopter , 3 Cop cars 🚔🚓🚨 All for X group ride…"
     },
     {
@@ -71,7 +71,7 @@
     {
       "url": "https://www.tiktok.com/@zh.who/video/7682510288125463839",
       "date": "2026-09-06",
-      "views": 61400,
+      "views": 61500,
       "note": "Semi truck VS ZH2. Close call had me worried 😅✌️"
     },
     {
@@ -89,7 +89,7 @@
     {
       "url": "https://www.tiktok.com/@zh.who/video/7668049880547380511",
       "date": "2026-07-29",
-      "views": 8763,
+      "views": 8764,
       "note": "We set out to be the first bikes across the Gordie Howe Bridg…"
     },
     {
