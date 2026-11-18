@@ -17,25 +17,25 @@
   ],
   "_auto": "Auto-refreshed hourly by scripts/refresh-videos.mjs. Hand-edited \"note\" text is preserved by video id; \"views\" is re-pulled from TikTok (monotonic: never decreases). New/removed videos ship immediately; view-count-only changes are written at most every 6 hours to limit deploy churn. _lastRefresh records the last successful write.",
   "_lastRefresh": {
-    "at": "2026-11-17T23:07:36.514Z"
+    "at": "2026-11-18T14:30:51.388Z"
   },
   "videos": [
     {
       "url": "https://www.tiktok.com/@zh.who/video/7707068894841769229",
       "date": "2026-11-12",
-      "views": 333,
+      "views": 352,
       "note": "Sneak peaks from our photoshoot in Graffiti ally , more to co…"
     },
     {
       "url": "https://www.tiktok.com/@zh.who/video/7703284165050961182",
       "date": "2026-11-01",
-      "views": 1037,
+      "views": 1042,
       "note": "Truck almost took out so he hit him with the double pump 🍆💦…"
     },
     {
       "url": "https://www.tiktok.com/@zh.who/video/7702140619048750366",
       "date": "2026-10-29",
-      "views": 640,
+      "views": 641,
       "note": "Buff X Shiftober drift pit was wild ! 🔥 Got some crashes and…"
     },
     {
@@ -47,7 +47,7 @@
     {
       "url": "https://www.tiktok.com/@zh.who/video/7697330032498199839",
       "date": "2026-10-16",
-      "views": 6256,
+      "views": 6257,
       "note": "POV: You stop at a gas station in Detroit for 2 minutes 💀🤣P…"
     },
     {
@@ -59,7 +59,7 @@
     {
       "url": "https://www.tiktok.com/@zh.who/video/7690417056231001374",
       "date": "2026-09-28",
-      "views": 3672,
+      "views": 3677,
       "note": "1 Police Helicopter , 3 Cop cars 🚔🚓🚨 All for X group ride…"
     },
     {
