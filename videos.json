@@ -17,7 +17,7 @@
   ],
   "_auto": "Auto-refreshed hourly by scripts/refresh-videos.mjs. Hand-edited \"note\" text is preserved by video id; \"views\" is re-pulled from TikTok (monotonic: never decreases). New/removed videos ship immediately; view-count-only changes are written at most every 6 hours to limit deploy churn. _lastRefresh records the last successful write.",
   "_lastRefresh": {
-    "at": "2026-11-22T07:26:11.347Z"
+    "at": "2026-11-22T15:38:38.687Z"
   },
   "videos": [
     {
@@ -53,7 +53,7 @@
     {
       "url": "https://www.tiktok.com/@zh.who/video/7693050656894045471",
       "date": "2026-10-05",
-      "views": 2997,
+      "views": 2999,
       "note": "Who flooded my race track 😔🏍️ Turning this thing into a sup…"
     },
     {
