@@ -17,13 +17,13 @@
   ],
   "_auto": "Auto-refreshed hourly by scripts/refresh-videos.mjs. Hand-edited \"note\" text is preserved by video id; \"views\" is re-pulled from TikTok (monotonic: never decreases). New/removed videos ship immediately; view-count-only changes are written at most every 6 hours to limit deploy churn. _lastRefresh records the last successful write.",
   "_lastRefresh": {
-    "at": "2026-11-23T22:53:53.801Z"
+    "at": "2026-11-24T07:04:39.888Z"
   },
   "videos": [
     {
       "url": "https://www.tiktok.com/@zh.who/video/7707068894841769229",
       "date": "2026-11-12",
-      "views": 414,
+      "views": 415,
       "note": "Sneak peaks from our photoshoot in Graffiti ally , more to co…"
     },
     {
@@ -47,13 +47,13 @@
     {
       "url": "https://www.tiktok.com/@zh.who/video/7697330032498199839",
       "date": "2026-10-16",
-      "views": 6270,
+      "views": 6273,
       "note": "POV: You stop at a gas station in Detroit for 2 minutes 💀🤣P…"
     },
     {
       "url": "https://www.tiktok.com/@zh.who/video/7693050656894045471",
       "date": "2026-10-05",
-      "views": 3005,
+      "views": 3010,
       "note": "Who flooded my race track 😔🏍️ Turning this thing into a sup…"
     },
     {
